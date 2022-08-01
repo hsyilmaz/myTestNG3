@@ -14,14 +14,12 @@ public class _01_giris {
     void websitesiniAc(){
         System.out.println("Driver tanimlandi ve web sitesi acildi");
 
-
     }
 
     @Test(priority=2)
     void LoginTestIsleminiYap(){
         System.out.println("Login test islemleri yapildi");
         ///yesil tik hatali assertion yok demektir.
-
 
     }
 
