@@ -22,7 +22,7 @@ public class GenelWebDriver {
         logger.setLevel(Level.SEVERE);
 
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY,"true");
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
         driver = new ChromeDriver();
         //driver.manage().window().maximize(); // max
         driver.manage().deleteAllCookies();  //

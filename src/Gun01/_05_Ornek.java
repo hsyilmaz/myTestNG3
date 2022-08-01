@@ -29,10 +29,10 @@ public class _05_Ornek extends GenelWebDriver {
     void LoginTest()
     {
         WebElement inputEmail= driver.findElement(By.id("input-email"));
-        inputEmail.sendKeys("tenstng@gmail.com");
+        inputEmail.sendKeys("hsy@gmail.com");
 
         WebElement password= driver.findElement(By.id("input-password"));
-        password.sendKeys("123qweasd");
+        password.sendKeys("Hy338");
 
         WebElement loginBtn= driver.findElement(By.cssSelector("input[value='Login']"));
         loginBtn.click();
