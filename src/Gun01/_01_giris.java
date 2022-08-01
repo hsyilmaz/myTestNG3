@@ -30,7 +30,4 @@ public class _01_giris {
 
 
     }
-
-
-
 }
