@@ -13,7 +13,7 @@ public class _03_EditAcc2 extends GenelWebDriver {
     void EditAccount()
     {
         editAccount("Nazmi", "Naz");
-        //Bekle
+        Tools.Bekle(2);
         editAccount("First", "Surname");
     }
 
