@@ -18,18 +18,15 @@ public class Tools {
       WebElement confirmingMssg =
       GenelWebDriver.driver.findElement(By.cssSelector("div[class='alert alert-success alert-dismissible']"));
 
-      Assert.assertTrue(confirmingMssg.getText().contains("successfully updated"));
+      Assert.assertTrue(confirmingMssg.getText().contains(" successfully "));
 
     }
     public static void Bekle(int saniye)
     {
-        try
-        {
-            Thread.sleep(saniye*1000);}
+        try {Thread.sleep(saniye*1000);}
 
         catch (InterruptedException e)
-        {
-            throw new RuntimeException(e);}
+        { throw new RuntimeException(e); }
 
     }
 
