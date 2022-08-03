@@ -50,6 +50,7 @@ public class GenelWebDriver {
 
             WebElement loginBtn= driver.findElement(By.cssSelector("input[value='Login']"));
             loginBtn.click();
+
         }
 
     @AfterClass
