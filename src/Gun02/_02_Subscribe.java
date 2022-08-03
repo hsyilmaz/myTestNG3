@@ -29,8 +29,8 @@ public class _02_Subscribe extends GenelWebDriver {
         WebElement newsletterLink = driver.findElement(link);
         newsletterLink.click();
 
-        WebElement accept= driver.findElement(yes);
-        accept.click();
+        WebElement accept1= driver.findElement(yes);
+        accept1.click();
 
         WebElement continueButton = driver.findElement(cnt);
         continueButton.click();
@@ -44,8 +44,8 @@ public class _02_Subscribe extends GenelWebDriver {
         WebElement newsletterLink = wait.until(ExpectedConditions.elementToBeClickable(link));
         newsletterLink.click();
 
-        WebElement accept= driver.findElement(no);
-        accept.click();
+        WebElement accept2= driver.findElement(no);
+        accept2.click();
 
         WebElement continueButton = driver.findElement(cnt);
         continueButton.click();

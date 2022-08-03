@@ -8,6 +8,7 @@ import Utils.GenelWebDriver;
 import Utils.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -27,13 +28,15 @@ public class _01_ValidateMenu extends GenelWebDriver {
         menuExpectedList.add("Cameras");
         menuExpectedList.add("MP3 Players");
 
+
         By menuFinder= By.cssSelector("ul[class='nav navbar-nav']>li");
+
         List <WebElement>menuActualList= driver.findElements(menuFinder);
 
         Tools.compareToList(menuExpectedList,menuActualList);
 
-
-
+//        for (int i=0; i<menuExpectedList.size(); i++)
+//            Assert.assertEquals(menuExpectedList.get(i),menuActualList.get(i).getText());
 
     }
 }
