@@ -9,7 +9,6 @@ package Gun01;
 import Utils.GenelWebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class _05_Ornek extends GenelWebDriver {
@@ -23,13 +22,14 @@ public class _05_Ornek extends GenelWebDriver {
         WebElement password= driver.findElement(By.id("input-password"));
         password.sendKeys("Hy338");
 
+        System.out.println(driver.getWindowHandle());
+
         WebElement loginBtn= driver.findElement(By.cssSelector("input[value='Login']"));
         loginBtn.click();
 
-//        WebElement teyid=driver.findElement(By.xpath("//*[text()='Your Store']"));
 
-//        Assert.assertEquals("https://opencart.abstracta.us/index.php?route=account/account", driver.getWindowHandle());
-
+//        WebElement teyid= driver.findElement(By.linkText("Your Store"));
+//        Assert.assertTrue(teyid.getText().contains("Your Store"));
 
     }
 
