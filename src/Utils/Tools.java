@@ -16,9 +16,9 @@ public class Tools {
     public static void successMessageValidation()
     {
       WebElement confirmingMssg =
-      GenelWebDriver.driver.findElement(By.xpath("//div[contains(text(),'successfully updated.')]"));
+      GenelWebDriver.driver.findElement(By.cssSelector("div[class='alert alert-success alert-dismissible']"));
 
-      Assert.assertTrue(confirmingMssg.getText().contains("successfully"));
+      Assert.assertTrue(confirmingMssg.getText().contains("successfully updated"));
 
     }
 
