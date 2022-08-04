@@ -18,7 +18,7 @@ public class _03_EditAccount extends GenelWebDriver {
 
 
     void editAccount(String ad, String soyad) {
-        WebElement edit = driver.findElement(By.linkText("Edit Account"));
+        WebElement edit = driver.findElement(By.linkText("Edit Account"));  //div>a[href$='edit']
         edit.click();
 
         WebElement Fname = driver.findElement(By.id("input-firstname"));
