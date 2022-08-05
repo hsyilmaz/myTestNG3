@@ -1,11 +1,11 @@
 package Gun03;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import Utils.Tools;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -36,7 +36,7 @@ public class alperPrj {
 
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
 
         driver = new ChromeDriver();
 
@@ -59,11 +59,9 @@ public class alperPrj {
     public void BitirIslemleri() {
         System.out.println("Driver Quit .....");
 
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        try {Thread.sleep(3000);}
+        catch (InterruptedException e)
+        {throw new RuntimeException(e);}
         driver.quit();
     }
 
@@ -143,33 +141,49 @@ public class alperPrj {
 
     }
 
-    @Test(dependsOnMethods = {"seneryo2"})
+    @Test
     void seneryo3() throws AWTException {
 
-        Robot robot = new Robot();
+        Robot rbt = new Robot();
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        WebElement searchButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class='pure-button pure-button-primary-progressive']")));
+        WebElement searchButton = driver.findElement(By.cssSelector("button[class='pure-button pure-button-primary-progressive']"));
         searchButton.click();
 
-        WebElement searchInput = driver.findElement(By.cssSelector("input[id='ooui-php-1']"));
-        searchInput.sendKeys("Yazılım");
+        WebElement searchInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[id='ooui-php-1']")));
+//        searchInput.sendKeys("Yazılım");
+
+        Actions actions=new Actions(driver);
+        Action action=actions.moveToElement(searchInput).click().sendKeys("Yazılım").build();
+        action.perform();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title='Yazılım mühendisliği']")));
-        robot.keyPress(KeyEvent.VK_DOWN);
-        robot.keyRelease(KeyEvent.VK_DOWN);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+
+        action=actions.sendKeys(Keys.DOWN).sendKeys(Keys.ENTER).build();
+        action.perform();
+
+//        rbt.keyPress(KeyEvent.VK_META);
+//        rbt.keyPress(KeyEvent.VK_TAB);
+//        rbt.keyRelease(KeyEvent.VK_TAB);
+//        Tools.Bekle(1);
+//        rbt.keyRelease(KeyEvent.VK_META);
+//
+//        rbt.keyPress(KeyEvent.VK_DOWN);
+//        rbt.keyRelease(KeyEvent.VK_DOWN);
+//        rbt.keyPress(KeyEvent.VK_ENTER);
+//        rbt.keyRelease(KeyEvent.VK_ENTER);
+
+
 
         WebElement yazilimBaslik = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title='Yazılım mühendisliği']")));
         yazilimBaslik.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[id='firstHeading']")));
+        WebElement firstHeading = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[id='firstHeading']")));
 
-        Assert.assertEquals("Yazılım mühendisliği", driver.findElement(By.cssSelector("[id='firstHeading']")).getText(), "Karşılaştırma Sonucu : ");
+        Assert.assertEquals("Yazılım mühendisliği", firstHeading.getText(), "Karşılaştırma Sonucu : ");
 
-        WebElement element = driver.findElement(By.cssSelector("a[href='//meta.wikimedia.org/wiki/Privacy_policy/tr']"));
+        WebElement element = driver.findElement(By.cssSelector("a[href$='Privacy_policy/tr']"));
 
         js.executeScript("arguments[0].scrollIntoView()", element);
 
@@ -177,6 +191,6 @@ public class alperPrj {
 
         WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[id='firstHeading']")));
 
-        Assert.assertEquals("Gizlilik Politikası",header.getText(), "Karşılaştırma sonucu : ");
+        Assert.assertEquals(header.getText(),"Gizlilik Politikası", "Karşılaştırma sonucu : ");
     }
 }

@@ -54,8 +54,8 @@ public class _02_AddressFunctionality extends GenelWebDriver {
        //wait.until(ExpectedConditions.elementToBeClickable(Country));
 
 
-        By Region_options = By.cssSelector("[id='input-zone']>option");
-        wait.until(ExpectedConditions.stalenessOf(driver.findElement(Region_options)));
+        WebElement Region_options = driver.findElement(By.cssSelector("[id='input-zone']>option"));
+        wait.until(ExpectedConditions.stalenessOf(Region_options));
         //bu elemanın bayatlamış hali gidene kadar bekle
 
         WebElement Region = driver.findElement(By.id("input-zone"));
