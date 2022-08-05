@@ -57,11 +57,12 @@ public class GenelWebDriver {
     public void BitisIslemleri()
     {
         System.out.println("Driver stop ....");
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
+        try {Thread.sleep(3000);}
+
+        catch (InterruptedException e)
+        {throw new RuntimeException(e);}
+
         driver.quit();
     }
 

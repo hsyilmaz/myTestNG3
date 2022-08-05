@@ -13,7 +13,7 @@ public class _03_Intro {
 
     @BeforeTest
     void aTest(){
-        System.out.println("z test");
+        System.out.println("a test");
     }
 
     //  //Aynı annotation dan olursa Class isminin alfabetik sırasına göre çalışır

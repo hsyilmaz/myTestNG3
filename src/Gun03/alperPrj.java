@@ -70,10 +70,11 @@ public class alperPrj {
 
     @Test
     void seneryo1() {
+        By other_project = By.cssSelector("[class='other-project-title jsl10n']");
 
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("[class='other-project-title jsl10n']")));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(other_project));
 
-        List<WebElement> otherProjects = driver.findElements(By.cssSelector("[class='other-project-title jsl10n']"));
+        List<WebElement> otherProjects = driver.findElements(other_project);
 
         List<String> projectNames = new ArrayList<>();
 
