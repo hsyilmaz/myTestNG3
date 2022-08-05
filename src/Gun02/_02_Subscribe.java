@@ -44,10 +44,10 @@ public class _02_Subscribe extends GenelWebDriver {
         WebElement newsletterLink = wait.until(ExpectedConditions.elementToBeClickable(link));
         newsletterLink.click();
 
-        WebElement accept2= driver.findElement(no);
+        WebElement accept2= ((WebElement) no);  // writing code in this way is possible too.
         accept2.click();
 
-        WebElement continueButton = driver.findElement(cnt);
+        WebElement continueButton = ((WebElement) cnt); //
         continueButton.click();
 
         Tools.successMessageValidation();

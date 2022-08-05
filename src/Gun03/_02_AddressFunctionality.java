@@ -4,8 +4,11 @@ import Utils.GenelWebDriver;
 import Utils.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
+
+import java.util.List;
     /*
        Senaryo;
        1- Siteyi açınız.
@@ -16,7 +19,7 @@ import org.testng.annotations.Test;
 
 public class _02_AddressFunctionality extends GenelWebDriver {
     @Test
-    void Adresekle()
+    void Adres_add()
     {
         WebElement addressBook = driver.findElement(By.linkText("Address Book"));
         addressBook.click();
@@ -48,39 +51,16 @@ public class _02_AddressFunctionality extends GenelWebDriver {
         WebElement Country = driver.findElement(By.name("country_id"));
         Select countMenu=new Select(Country);
         countMenu.selectByValue("215");
+       //wait.until(ExpectedConditions.elementToBeClickable(Country));
 
-        WebElement Region = driver.findElement(By.name("zone_id"));
+
+        By Region_options = By.cssSelector("[id='input-zone']>option");
+        wait.until(ExpectedConditions.stalenessOf(driver.findElement(Region_options)));
+        //bu elemanın bayatlamış hali gidene kadar bekle
+
+        WebElement Region = driver.findElement(By.id("input-zone"));
         Select regionMenu=new Select(Region);
-        regionMenu.selectByValue("3341");
-
-        WebElement DefAddress= driver.findElement(By.cssSelector("[name='default'][value='1']"));
-        DefAddress.click();
-
-        WebElement Continue = driver.findElement(By.cssSelector("[value='Continue']"));
-        Continue.click();
-
-        Tools.successMessageValidation();
-
-        Tools.Bekle(5);
-    }
-
-
-    @Test
-    void Adresedit(){
-
-        WebElement addressBook = driver.findElement(By.linkText("Address Book"));
-        addressBook.click();
-
-        WebElement Editadres = driver.findElement(By.xpath("(//a[text()='Edit'])[3]"));
-        Editadres.click();
-
-        WebElement name = driver.findElement(By.id("input-firstname"));
-        name.clear();
-        name.sendKeys("Nazann");
-
-        WebElement Lname = driver.findElement(By.name("lastname"));
-        Lname.clear();
-        Lname.sendKeys("Nazancan");
+        regionMenu.selectByIndex(15);
 
         WebElement DefAddress= driver.findElement(By.cssSelector("[name='default'][value='0']"));
         DefAddress.click();
@@ -90,12 +70,49 @@ public class _02_AddressFunctionality extends GenelWebDriver {
 
         Tools.successMessageValidation();
 
-        WebElement Deleteadres = driver.findElement(By.xpath("(//a[text()='Delete'])[3/**/]"));
-        Deleteadres.click();
+    }
+
+    @Test(dependsOnMethods = {"Adres_add"})
+    void Adres_edit() {
+
+        WebElement addressBook = driver.findElement(By.linkText("Address Book"));
+        addressBook.click();
+
+        List<WebElement> editall = driver.findElements(By.linkText("Edit"));
+        WebElement sonedit = editall.get(editall.size()-1);  // son edit element.
+        System.out.println("editall = " + editall.size());
+        sonedit.click();
+
+
+        WebElement name = driver.findElement(By.id("input-firstname"));
+        name.clear();
+        name.sendKeys("Nazann");
+
+        WebElement Lname = driver.findElement(By.name("lastname"));
+        Lname.clear();
+        Lname.sendKeys("Nazancan");
+
+        WebElement DefAddress = driver.findElement(By.cssSelector("[name='default'][value='0']"));
+        DefAddress.click();
+
+        WebElement Continue = driver.findElement(By.cssSelector("[value='Continue']"));
+        Continue.click();
 
         Tools.successMessageValidation();
+    }
 
-        Tools.Bekle(5);
+    @Test(dependsOnMethods = {"Adres_edit"})
+    void Adres_delete(){
+
+        WebElement addressBook = driver.findElement(By.linkText("Address Book"));
+        addressBook.click();
+
+        List<WebElement> deleteall = driver.findElements(By.linkText("Delete"));
+        WebElement sondelete = deleteall.get(deleteall.size()-1);  // son delete element.
+        System.out.println("deleteall = " + deleteall.size());
+        sondelete.click();
+
+        Tools.successMessageValidation();
 
     }
 
