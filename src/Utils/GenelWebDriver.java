@@ -30,12 +30,15 @@ public class GenelWebDriver {
         driver.manage().window().maximize(); // max
         driver.manage().deleteAllCookies();  //
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // sadece ana sayfa yüklenirken en başta
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // bütün webElement için geçerli
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // bütün webElement için geçerli
 
         driver.get("http://opencart.abstracta.us/index.php?route=account/login");
+
+//        System.out.println(driver.getTitle());  calisiyor.
+//        System.out.println(driver.findElement(By.tagName("title")).getText()); calismiyor!!!
 
         loginTest();
     }
