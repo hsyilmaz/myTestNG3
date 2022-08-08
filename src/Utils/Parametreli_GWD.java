@@ -32,9 +32,8 @@ public class Parametreli_GWD {
 
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-
-        } else
-            if (browser.equalsIgnoreCase("firefox")){
+        }
+        else if (browser.equalsIgnoreCase("firefox")){
 
                 System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
                 System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
