@@ -1,40 +1,47 @@
-package Gun05;
-
- /*
-       Senaryo ;
-       1- Siteyi açınız.
-       2- mac kelimeini göndererek aratınız.
-       3- Çıkan sonuçlarda mac kelimesinin geçtiğini doğrulayınız.
-       4- aynı işlemi samsung için de yapınız
-     */
+package Gun06;
 
 import Utils.GenelWebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class _03_SearchFunctionality extends GenelWebDriver {
+/**
+ * Daha önceki derslerde yaptğımı Search fonksiyonunu
+ * mac,ipod ve samsung için Dataprovider ile yapınız.
+ */
+public class _04_Task extends GenelWebDriver {
 
-    @Parameters("arananKelime")
-    @Test
-    void SearchFunction (String txtSearch)
+
+    @Test(dataProvider = "getData")
+    void  SearchFunction(String txtSearch)
     {
         WebElement searchInput = driver.findElement(By.name("search"));
+        searchInput.clear();
         searchInput.sendKeys(txtSearch);
 
         WebElement searchButton = driver.findElement(By.cssSelector("#search  button"));
         searchButton.click();
 
         //h4>a
-        List<WebElement> captions = driver.findElements(By.cssSelector("[class='caption'] a"));
+        List<WebElement> captions = driver.findElements
+                (By.cssSelector("[class='caption'] a"));
 
         for (WebElement e : captions) {
             Assert.assertTrue(e.getText().toLowerCase().contains(txtSearch));
         }
     }
+
+    @DataProvider
+    public Object[] getData()
+    {
+        Object[] data = {"mac","ipod","samsung"};
+        return data;
+    }
+
 
 }

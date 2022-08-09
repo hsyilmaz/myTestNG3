@@ -15,9 +15,9 @@ import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Parametreli_GWD {
+public class ParametreliWebDriver {
 
-    public static WebDriver driver;
+    public WebDriver driver;
     public static WebDriverWait wait;
 
     @Parameters("browser")
@@ -30,29 +30,29 @@ public class Parametreli_GWD {
 
         if (browser.equalsIgnoreCase("chrome")){
 
-        System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+            System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+            driver = new ChromeDriver();
         }
-        else if (browser.equalsIgnoreCase("firefox")){
+        else
+            if (browser.equalsIgnoreCase("firefox")){
 
                 System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
                 System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
                 driver = new FirefoxDriver();
             }
 
-        driver = new ChromeDriver();
+
         driver.manage().window().maximize(); // max
         driver.manage().deleteAllCookies();  //
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // sadece ana sayfa yüklenirken en başta
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // bütün webElement için geçerli
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15)); // bütün webElement için geçerli
 
         driver.get("http://opencart.abstracta.us/index.php?route=account/login");
 
-//        System.out.println(driver.getTitle());  calisiyor.
-//        System.out.println(driver.findElement(By.tagName("title")).getText()); calismiyor!!!
 
         loginTest();
     }

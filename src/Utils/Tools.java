@@ -29,6 +29,14 @@ public class Tools {
         { throw new RuntimeException(e); }
 
     }
+    public static double WebElementToDouble(WebElement e) {
+        String result=e.getText();
+        result=result.replaceAll("[\\D]","");
+        return Double.parseDouble(result);
+    }
+
+
+
 
 
 }

@@ -12,9 +12,9 @@
         <!--çalışcak classların yazıldığı bölüm-->
         <classes>
             <class name="Gun05._01_Groups">
-              <methods>
-                  <exclude name="Test4"></exclude>
-              </methods>
+                <methods>
+                    <exclude name="Test4"></exclude>
+                </methods>
             </class>
         </classes>
 

@@ -5,13 +5,13 @@
         <!-- hangi gruplar çalıştırılacak-->
        <groups>
          <run>
-           <include name="SmokeTest"></include>
+           <include name="SmokeTest"> </include>
          </run>
        </groups>
 
         <!--çalışcak classların yazıldığı bölüm-->
         <classes>
-            <class name="Gun05._01_Groups"></class>
+            <class name="Gun05._01_Groups"> </class>
         </classes>
 
     </test>
