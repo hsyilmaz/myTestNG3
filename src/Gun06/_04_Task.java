@@ -10,9 +10,8 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-/**
- * Daha önceki derslerde yaptğımı Search fonksiyonunu
- * mac,ipod ve samsung için Dataprovider ile yapınız.
+/*
+ * mac,ipod ve samsung için Dataprovider ile search:
  */
 public class _04_Task extends GenelWebDriver {
 

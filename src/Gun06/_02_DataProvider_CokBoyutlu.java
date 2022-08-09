@@ -14,12 +14,7 @@ public class _02_DataProvider_CokBoyutlu {
     @DataProvider
     public Object[][] getData()
     {
-        Object[][] data={
-                {"Nurhayat","122333"},
-                {"Alper","ererer"},
-                {"Uğur","ererer3343"},
-                {"Hakan","sdsdsd"}
-        };
+      Object[][] data={ {"Nurhayat","122333"}, {"Alper","ererer"}, {"Umur","ererer3343"}, {"Hakan","sdsdsd"} };
         return data;
     }
 

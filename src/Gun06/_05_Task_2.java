@@ -9,10 +9,9 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-/**
- * Bir önceki task da yapılan testi PARAMETERDRIVER ile yapınız
- * sonrasında fakrlı tarayıcılar ile çalıştırınız.
- * sonrasında paralel çalıştırınız.
+/*
+ * fakrlı tarayıcılar ile search
+ * sonrasında paralel çalıştır.
  */
 
 public class _05_Task_2 extends ParametreliWebDriver {
@@ -24,13 +23,11 @@ public class _05_Task_2 extends ParametreliWebDriver {
         searchInput.clear();
         searchInput.sendKeys(txtSearch);
 
-        WebElement searchButton = driver.findElement
-                (By.cssSelector("#search  button"));
+        WebElement searchButton = driver.findElement(By.cssSelector("#search  button"));
         searchButton.click();
 
         //h4>a
-        List<WebElement> captions = driver.findElements
-                (By.cssSelector("[class='caption'] a"));
+        List<WebElement> captions = driver.findElements(By.cssSelector("[class='caption'] a"));
 
         for (WebElement e : captions) {
             Assert.assertTrue(e.getText().toLowerCase().contains(txtSearch));

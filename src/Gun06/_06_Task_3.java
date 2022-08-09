@@ -30,7 +30,7 @@ public class _06_Task_3 extends GenelWebDriver {
 
         Assert.assertEquals(productList.size(), oldPriceList.size()); // 3.madde
 
-        /*** Eksi fiyat yeni fiyat karşılaştırması *****/
+        /*** Eksi fiyat yeni fiyat karşılaştırması ***/
         List<WebElement> newPriceList=driver.findElements(By.cssSelector("span[class='price-new']")); // yeni fiyatlar
 
         for(int i=0;i< newPriceList.size() ; i++)

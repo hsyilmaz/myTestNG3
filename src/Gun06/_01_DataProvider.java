@@ -1,7 +1,6 @@
 package Gun06;
 
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class _01_DataProvider {
@@ -14,6 +13,8 @@ public class _01_DataProvider {
      * XML filer file gruplama, pararalel, ve farklı tesleri koordine edip birarada çalıştırmak için kullanılır.
      */
 
+
+
     @Test(dataProvider="getData")
     void UsernameTest(String username)
     {
@@ -23,10 +24,13 @@ public class _01_DataProvider {
     @DataProvider // bu metoda dataprovider görevi verildi.
     public Object[] getData() // DataProvider olarak kullanılcak metodun tipi Object olmak zorunda.
     {
-        Object[] data={"Nurhayat","Alper","Uğur","Hakan"};
+        Object[] data={"Nurhayat","Alper","Umur","Hakan"};
 
         return data;
     }
+
+
+
 
     /*****************************************/
 
