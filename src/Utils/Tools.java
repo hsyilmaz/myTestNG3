@@ -33,6 +33,9 @@ public class Tools {
         String result=e.getText();
         result=result.replaceAll("[\\D]","");
         return Double.parseDouble(result);
+
+//        return Double.parseDouble(e.getText().replaceAll("[\\D]",""));
+//        return Double.parseDouble(e.getText().replace("$",""));
     }
 
 

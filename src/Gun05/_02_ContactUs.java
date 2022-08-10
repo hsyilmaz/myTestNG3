@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 public class _02_ContactUs extends GenelWebDriver {
 
     @Test
-    @Parameters("mesaj") // Gun06.Gun06.XML deki adı
+    @Parameters("mesaj")
     void ContactUs(String gelenMesaj) // metoddaki adı
     {
         WebElement contactUsButton = driver.findElement(By.linkText("Contact Us"));

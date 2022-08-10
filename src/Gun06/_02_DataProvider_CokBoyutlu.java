@@ -8,7 +8,7 @@ public class _02_DataProvider_CokBoyutlu {
     @Test(dataProvider="getData")
     void UsernameTest(String username, String password)
     {
-        System.out.println("Username="+username+", password="+password);
+        System.out.println("Username= "+username+", password= "+password);
     }
 
     @DataProvider

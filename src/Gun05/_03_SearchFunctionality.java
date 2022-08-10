@@ -30,7 +30,7 @@ public class _03_SearchFunctionality extends GenelWebDriver {
         searchButton.click();
 
         //h4>a
-        List<WebElement> captions = driver.findElements(By.cssSelector("[class='caption'] a"));
+        List<WebElement> captions = driver.findElements(By.cssSelector(".caption"));
 
         for (WebElement e : captions) {
             Assert.assertTrue(e.getText().toLowerCase().contains(txtSearch));
