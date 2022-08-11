@@ -55,7 +55,7 @@ public class _02_PlaceOrder extends GenelWebDriver {
         WebElement contin4 = driver.findElement(By.id("button-payment-method"));
         contin4.click();
 
-        WebElement confirmOrder = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[value='Confirm Order']")));
+        WebElement confirmOrder = wait.until(ExpectedConditions.elementToBeClickable(By.id("button-confirm")));
         confirmOrder.click();
 
         wait.until(ExpectedConditions.urlContains("success"));
@@ -63,7 +63,7 @@ public class _02_PlaceOrder extends GenelWebDriver {
         //WebElement h1 = driver.findElement(By.xpath("//h1[contains(text(),'placed!')]"));
         WebElement h1 = driver.findElement(By.cssSelector("#content>h1"));
 
-        Assert.assertEquals(h1.getText(),"Your order has been placed!");
+        Assert.assertEquals(h1.getText(),"Your order has been placed!","Comparison result");
 
 
 
