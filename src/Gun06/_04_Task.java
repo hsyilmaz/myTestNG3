@@ -17,7 +17,7 @@ public class _04_Task extends GenelWebDriver {
 
 
     @Test(dataProvider = "getData")
-    void  SearchFunction(String txtSearch)
+        void search (String txtSearch)
     {
         WebElement searchInput = driver.findElement(By.name("search"));
         searchInput.clear();
@@ -27,20 +27,23 @@ public class _04_Task extends GenelWebDriver {
         searchButton.click();
 
         //h4>a
-        List<WebElement> captions = driver.findElements
-                (By.cssSelector("[class='caption'] a"));
+        List<WebElement> captions =
+                driver.findElements(By.cssSelector(".caption a"));
 
         for (WebElement e : captions) {
             Assert.assertTrue(e.getText().toLowerCase().contains(txtSearch));
         }
     }
-
     @DataProvider
-    public Object[] getData()
+    public Object [] getData()
     {
-        Object[] data = {"mac","ipod","samsung"};
+        Object [] data={"mac","ipod","samsung"};
         return data;
     }
 
 
-}
+
+    }
+
+
+

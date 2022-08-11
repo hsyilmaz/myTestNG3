@@ -37,8 +37,10 @@ public class Tools {
 //        return Double.parseDouble(e.getText().replaceAll("[\\D]",""));
 //        return Double.parseDouble(e.getText().replace("$",""));
     }
-
-
+    public static int RandomGenerator (int max)
+    {
+        return (int)(Math.random()*max)+1;
+    }
 
 
 

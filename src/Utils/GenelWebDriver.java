@@ -37,8 +37,6 @@ public class GenelWebDriver {
 
         driver.get("http://opencart.abstracta.us/index.php?route=account/login");
 
-//        System.out.println(driver.getTitle());  calisiyor.
-//        System.out.println(driver.findElement(By.tagName("title")).getText()); calismiyor!!!
 
         loginTest();
     }
@@ -70,3 +68,5 @@ public class GenelWebDriver {
     }
 
 }
+//        System.out.println(driver.getTitle());  calisiyor.
+//        System.out.println(driver.findElement(By.tagName("title")).getText()); calismiyor!!!

@@ -1,5 +1,4 @@
 package Gun07;
-
 import Utils.GenelWebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -34,8 +33,8 @@ public class _02_PlaceOrder extends GenelWebDriver {
         WebElement addtoCart= driver.findElement(By.cssSelector("button#button-cart"));
         addtoCart.click();
 
-        WebElement teyit = driver.findElement(By.linkText("shopping cart"));
-        Assert.assertTrue(teyit.isDisplayed());
+//        WebElement teyit = driver.findElement(By.linkText("shopping cart"));
+//        Assert.assertTrue(teyit.isDisplayed());
 
         WebElement Checkout = driver.findElement(By.linkText("Checkout"));
         Checkout.click();
@@ -64,10 +63,6 @@ public class _02_PlaceOrder extends GenelWebDriver {
         WebElement h1 = driver.findElement(By.cssSelector("#content>h1"));
 
         Assert.assertEquals(h1.getText(),"Your order has been placed!","Comparison result");
-
-
-
-
     }
 
 }
