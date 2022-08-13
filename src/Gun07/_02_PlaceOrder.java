@@ -58,6 +58,7 @@ public class _02_PlaceOrder extends GenelWebDriver {
         confirmOrder.click();
 
         wait.until(ExpectedConditions.urlContains("success"));
+//        Assert.assertTrue(driver.getCurrentUrl().contains("success"));
 
         //WebElement h1 = driver.findElement(By.xpath("//h1[contains(text(),'placed!')]"));
         WebElement h1 = driver.findElement(By.cssSelector("#content>h1"));

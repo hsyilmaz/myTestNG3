@@ -6,16 +6,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 // Bu sayfadaki bütün elemenalrın driverlar bağlantısı gerekiyor
-// bunun için aşağıdaki consructor eklendi ve için PageFatory ile
+// bunun için aşağıdaki consructor eklendi ve PageFactory ile
 // driver üzerinden bu (this) sayfadaki bütün elemnalar ilşkilendirildi.
-// Böylece Sayfada dan nesne türetildiği zaman değil, kullanıldığı
+// Böylece Sayfa dan nesne türetildiği zaman değil, kullanıldığı
 // anda elemanların bulunması aktif oluyor.Bu yöntemle bütün sayfalarda
 // aynı isimde elemanlar var ise buradaki tanımlama hepsi için geçerli hale
 // gelmiş oluyor. buna yapıya Page Object Model (POM) adı veriliyor.
 
 public class _03_PlaceOrderElements {
 public _03_PlaceOrderElements(WebDriver driver)
-    { PageFactory.initElements(driver, this); }   ////constructor
+{ PageFactory.initElements(driver,this); }
 
     @FindBy(name="search")
     public WebElement searchInput;
@@ -47,7 +47,7 @@ public _03_PlaceOrderElements(WebDriver driver)
     @FindBy(id = "button-payment-method")
     public WebElement contin4;
 
-    @FindBy(id = "button-confirm")
+    @FindBy(id="button-confirm")
     public WebElement confirmOrder;
 
     @FindBy(css="#content>h1")

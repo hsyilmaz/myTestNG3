@@ -10,7 +10,7 @@ public class _04_PlaceOrderPOM extends GenelWebDriver {
     @Test
     void ProceedToCheckout()
     {
-        _03_PlaceOrderElements elements = new _03_PlaceOrderElements(driver);
+       _03_PlaceOrderElements elements = new _03_PlaceOrderElements(driver);
 
         elements.searchInput.sendKeys("ipod");
 
@@ -23,7 +23,6 @@ public class _04_PlaceOrderPOM extends GenelWebDriver {
         elements.Checkout.click();
 
         wait.until(ExpectedConditions.elementToBeClickable(elements.contin)).click();
-
 
         wait.until(ExpectedConditions.elementToBeClickable(elements.contin2)).click();
 
