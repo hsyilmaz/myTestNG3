@@ -3,10 +3,9 @@ package Gun09FPrj;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class senariowholePOM extends driver{
+public class senario1POM extends driver{
 
     @Test
-
     void login() {
 
         senarioelements snr = new senarioelements(driver);
@@ -17,8 +16,7 @@ public class senariowholePOM extends driver{
 
         snr.login.click();
 
-        Assert.assertTrue(snr.loginvalidate.getText().contains("grup21"));
+        Assert.assertEquals(snr.loginvalidate.getText(),"Log out");
 
     }
-
 }
