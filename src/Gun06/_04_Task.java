@@ -27,7 +27,7 @@ public class _04_Task extends GenelWebDriver {
         searchButton.click();
 
         //h4>a
-        List<WebElement> captions =
+        List <WebElement> captions =
                 driver.findElements(By.cssSelector(".caption a"));
 
         for (WebElement e : captions) {
@@ -37,7 +37,7 @@ public class _04_Task extends GenelWebDriver {
     @DataProvider
     public Object [] getData()
     {
-        Object [] data={"mac","ipod","samsung"};
+        Object [] data={"mac","iPod","samsung"};
         return data;
     }
 

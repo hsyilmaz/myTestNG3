@@ -51,21 +51,17 @@ public class _03_AddressFunctionality extends GenelWebDriver {
         countryS.selectByIndex(10);
 
         WebElement State=driver.findElement(By.id("input-zone"));
-        WebElement State_options= driver.findElement(By.cssSelector("[id='input-zone']>option)"));
+        //WebElement State_options= driver.findElement(By.cssSelector("[id='input-zone']>option)"));
         Select state=new Select(State);
         System.out.println("state.getOptions().size() 1 = " + state.getOptions().size());
 
                     wait.until(ExpectedConditions.numberOfElementsToBeLessThan
-              (By.cssSelector("[id='input-zone']>option)"), state.getOptions().size()));
+                            (By.id("input-zone"), state.getOptions().size()));
     // option ların sayısı ilk halinden küçük olana kadar bekle : yeni durum gelene kadar bekle
 
-                                        // 2.yol//
-        /// wait.until(ExpectedConditions.stalenessOf(State_options));
-            // bu elemanın bayatlamış hali gidene kadar bekle
-
         System.out.println("state.getOptions().size() 2 = " + state.getOptions().size());
-        for(WebElement e: state.getOptions())
-            System.out.println(e.getText());
+        //for(WebElement e: state.getOptions())
+            //System.out.println(e.getText());
 
         state.selectByIndex(3);
 

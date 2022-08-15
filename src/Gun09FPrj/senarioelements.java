@@ -9,7 +9,8 @@ import java.util.List;
 
 public class senarioelements {
 
-    public senarioelements(WebDriver driver){
+    public senarioelements(WebDriver driver)
+    {
         PageFactory.initElements(driver,this);
     }
 
@@ -58,6 +59,9 @@ public class senarioelements {
     @FindBy(id = "BillingNewAddress_StateProvinceId")
     public WebElement state;
 
+    @FindBy(css = "#BillingNewAddress_StateProvinceId>option")
+    public List <WebElement> stateoption;
+
     @FindBy(id = "BillingNewAddress_City")
     public WebElement city;
 
@@ -79,28 +83,10 @@ public class senarioelements {
     @FindBy(xpath = "(//input[@value='Continue'])[3]")
     public WebElement continue3;
 
-    @FindBy(css = "[value='Confirm']")
+    @FindBy(css = "input[onclick='ConfirmOrder.save()']")
     public WebElement confrim;
 
     @FindBy(css = ".title>strong")
     public WebElement txtvalidate;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
