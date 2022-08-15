@@ -25,8 +25,7 @@ public class senario3POM extends driver {
         Assert.assertTrue(snr.hatamsg.isDisplayed());
     }
 
-    @Test
-//(dependsOnMethods = "loginfailure")
+    @Test (dependsOnMethods = {"loginfailure"})
     void login() {
 
         senarioelements snr = new senarioelements(driver);
@@ -41,7 +40,7 @@ public class senario3POM extends driver {
         Assert.assertEquals(snr.loginvalidate.getText(),"Log out");
     }
 
-       @Test (dependsOnMethods = "login")
+    @Test (dependsOnMethods = {"login"})
     void ordercheck() {
 
         senarioelements snr = new senarioelements(driver);

@@ -32,7 +32,8 @@ public class driver {
 
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // sadece ana sayfa yüklenirken en başta
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("http://demowebshop.tricentis.com/login");
+        driver.navigate().to("http://demowebshop.tricentis.com/login");
+        //driver.get("http://demowebshop.tricentis.com/login");
 
     }
 

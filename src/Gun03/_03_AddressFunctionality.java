@@ -56,7 +56,7 @@ public class _03_AddressFunctionality extends GenelWebDriver {
         System.out.println("state.getOptions().size() 1 = " + state.getOptions().size());
 
                     wait.until(ExpectedConditions.numberOfElementsToBeLessThan
-                            (By.id("input-zone"), state.getOptions().size()));
+                            (By.cssSelector("[id='input-zone']>option)"), state.getOptions().size()));
     // option ların sayısı ilk halinden küçük olana kadar bekle : yeni durum gelene kadar bekle
 
         System.out.println("state.getOptions().size() 2 = " + state.getOptions().size());
