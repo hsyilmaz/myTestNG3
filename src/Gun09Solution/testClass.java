@@ -1,7 +1,6 @@
-package Gun09SolutionFprj;
+package Gun09Solution;
 
-import Gun09SolutionFprj.Pages.*;
-import Utils.GenelWebDriver;
+import Gun09Solution.Pages.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;

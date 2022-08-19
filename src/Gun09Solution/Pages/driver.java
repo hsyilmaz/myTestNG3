@@ -1,4 +1,4 @@
-package Gun09SolutionFprj.Pages;
+package Gun09Solution.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
