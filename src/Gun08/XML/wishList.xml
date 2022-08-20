@@ -2,9 +2,9 @@
 <suite name="Suit 1" >
 
     <test name="Test 1">
-        <parameter name="itemName" value="iPod"></parameter>
+        <parameter name="itemName" value="iPod"/>
         <classes>
-            <class name="Gun08._01_WishList"></class>
+            <class name="Gun08._01_WishList"/>
         </classes>
     </test>
 

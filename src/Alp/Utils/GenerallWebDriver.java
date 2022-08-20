@@ -11,7 +11,7 @@ import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 
-public class GeneralWebDriver {
+public class GenerallWebDriver {
 
     public static WebDriver driver;
     public static WebDriverWait wait;
@@ -47,10 +47,6 @@ public class GeneralWebDriver {
         wait = new WebDriverWait(driver, webDriverDuration);
 
     }
-
-
-
-
 
     @AfterClass
     void endProcess() {

@@ -1,18 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suit 1">
     <test name="Test 1">
-        <parameter name="arananKelime" value="samsung"/>
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Gun05._04_SearchFunctionality"/>
+            <class name="SoftSkill_HW.LoginTestNegative"/>
+            <class name="SoftSkill_HW.LoginTestPositive"/>
         </classes>
     </test>
     <test name="Test 2">
-        <parameter name="arananKelime" value="mac"/>
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="Gun05._04_SearchFunctionality"/>
+            <class name="SoftSkill_HW.LoginTestNegative"/>
+            <class name="SoftSkill_HW.LoginTestPositive"/>
         </classes>
     </test>
-
 </suite>
+
+        <!--parameter name="credential" value="...."/-->

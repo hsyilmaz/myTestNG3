@@ -21,7 +21,7 @@ public class _01_WishList extends GenelWebDriver {
     @Test
     void addToWishList(String aranacakUrun)
     {
-        _03_PlaceOrderElements poe=new _03_PlaceOrderElements(driver);
+        _03_PlaceOrderElements poe=new _03_PlaceOrderElements(GenelWebDriver.driver);
         poe.searchInput.sendKeys(aranacakUrun);
         poe.searchbutton.click();
 

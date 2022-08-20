@@ -1,6 +1,6 @@
 package Alp.Test;
 
-import Alp.Utils.GeneralWebDriver;
+import Alp.Utils.GenerallWebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 
 
-public class _04_Proje extends GeneralWebDriver {
+public class _04_Proje extends GenerallWebDriver {
 
     String email = "alperes@gmail.com";
     String password = "123456qwerasd";
