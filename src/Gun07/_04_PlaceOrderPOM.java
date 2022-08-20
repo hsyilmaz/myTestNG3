@@ -10,33 +10,33 @@ public class _04_PlaceOrderPOM extends GenelWebDriver {
     @Test
     void ProceedToCheckout()
     {
-       _03_PlaceOrderElements elmnts = new _03_PlaceOrderElements(driver);
+       _03_PlaceOrderElements elts = new _03_PlaceOrderElements(driver);
 
-        elmnts.searchInput.sendKeys("ipod");
+        elts.searchInput.sendKeys("ipod");
 
-        elmnts.searchbutton.click();
+        elts.searchbutton.click();
 
-        elmnts.iPod.click();
+        elts.iPod.click();
 
-        elmnts.addtoCart.click();
+        elts.addtoCart.click();
 
-        elmnts.Checkout.click();
+        elts.Checkout.click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(elmnts.contin)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(elts.contin)).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(elmnts.contin2)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(elts.contin2)).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(elmnts.contin3)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(elts.contin3)).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(elmnts.agree)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(elts.agree)).click();
 
-        elmnts.contin4.click();
+        elts.contin4.click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(elmnts.confirmOrder)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(elts.confirmOrder)).click();
 
         wait.until(ExpectedConditions.urlContains("success"));
 
-        Assert.assertEquals(elmnts.h1.getText(),"Your order has been placed!","Comparison result");
+        Assert.assertEquals(elts.h1.getText(),"Your order has been placed!","Comparison result");
     }
 
 }

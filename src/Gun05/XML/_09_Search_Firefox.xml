@@ -1,10 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suit 1">
     <test name="Test 1">
-        <parameter name="arananKelime" value="mac"></parameter>
-        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="arananKelime" value="mac"/>
+        <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="Gun05._04_SearchFunctionality"></class>
+            <class name="Gun05._04_SearchFunctionality"/>
         </classes>
     </test>
 </suite>
