@@ -13,7 +13,7 @@
         <classes>
             <class name="Gun05._01_Groups">
                 <methods>
-                    <exclude name="Test4"></exclude>
+                    <exclude name="Test4"/>
                 </methods>
             </class>
         </classes>

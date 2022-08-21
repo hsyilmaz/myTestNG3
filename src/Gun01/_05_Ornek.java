@@ -33,9 +33,9 @@ public class _05_Ornek extends GenelWebDriver{
     void assertion(){
         By Teyit= By.linkText("Your Store");
 
-        WebElement teyid= driver.findElement(Teyit);
+        WebElement teyit= driver.findElement(Teyit);
 
-        Assert.assertEquals(teyid.getText(),"Your Store");}
+        Assert.assertEquals(teyit.getText(),"Your Store");}
 
 
 }

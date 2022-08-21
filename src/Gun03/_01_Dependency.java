@@ -23,16 +23,16 @@ public class _01_Dependency {
     void driveCar()
     {
         System.out.println("car drove");
-        Assert.fail(); // buraya SKIP odurumunu görebilmek için kondu
+//        Assert.fail(); // buraya SKIP odurumunu görebilmek için kondu
     }
 
-    @Test( dependsOnMethods = { "startCar","driveCar"}) // bu testin çalışması için verile 2 testin hatasız bitmesi lazım
+    @Test( dependsOnMethods = {"startCar", "driveCar"}) // bu testin çalışması için verilen 2 testin hatasız bitmesi lazım
     void parkCar()
     {
         System.out.println("car parked");
     }
 
-    @Test( dependsOnMethods = { "parkCar"}, alwaysRun = true) //alwaysRun = true bağımlılıkları var ama hata çıkarsa da yine çalıştır
+    @Test( dependsOnMethods = "parkCar", alwaysRun = true) //alwaysRun = true bağımlılıkları var ama hata çıkarsa da yine çalıştır
     void stopCar()
     {
         System.out.println("car stopped");

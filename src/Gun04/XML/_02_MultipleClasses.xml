@@ -2,8 +2,8 @@
 <suite name="Suite 1"> <!-- Tum testleri kapsayan bolum-->
     <test name = "Test 1">  <!-- Test 1 kapsayan bolum-->
         <classes>  <!-- calisacak siniflarin yazildigi bolum-->
-            <class name="Gun04._02_Intro"></class>
-            <class name="Gun04._03_Intro"></class>
+            <class name="Gun04._02_Intro"/>
+            <class name="Gun04._03_Intro"/>
         </classes>
     </test>
 </suite>

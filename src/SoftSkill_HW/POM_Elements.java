@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class POM_Elements {
+public class POM_Elements{
     public POM_Elements() {
         PageFactory.initElements(SoftWebDriver.driver, this);
     }
