@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class LoginTestPositive extends SoftWebDriver{
 
-    @Parameters("browser")                      //yazmasak da calisiyor.
+    @Parameters("browser")                  //yazmasak da calisiyor. Cunku extend ettigimiz class da geciyor.
     @Test(dataProvider = "getData")
         void PositiveScenario(String userName, String passWord){
 

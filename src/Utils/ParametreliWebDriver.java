@@ -58,12 +58,11 @@ public class ParametreliWebDriver {
     }
 
         void loginTest()
-        {
-            WebElement inputEmail= driver.findElement(By.id("input-email"));
-            inputEmail.sendKeys("hsy@gmail.com");
+        {   By inputEmail=By.id("input-email");
+            driver.findElement(inputEmail).sendKeys("hsy@gmail.com");
 
-            WebElement password= driver.findElement(By.id("input-password"));
-            password.sendKeys("Hy338");
+            By password= By.id("input-password");
+            driver.findElement(password).sendKeys("Hy338");
 
             WebElement loginBtn= driver.findElement(By.cssSelector("input[value='Login']"));
             loginBtn.click();
