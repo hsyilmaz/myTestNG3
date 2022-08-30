@@ -1,17 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suit 1" parallel="tests" thread-count="2">
     <test name="Test 1">
-        <parameter name="arananKelime" value="samsung"> </parameter>
-        <parameter name="browser" value="chrome"> </parameter>
+        <parameter name="arananKelime" value="samsung"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Gun05._04_SearchFunctionality"> </class>
+            <class name="Gun05._04_SearchFunctionality"/>
         </classes>
     </test>
     <test name="Test 2">
-        <parameter name="arananKelime" value="mac"> </parameter>
-        <parameter name="browser" value="firefox"> </parameter>
+        <parameter name="arananKelime" value="mac"/>
+        <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="Gun05._04_SearchFunctionality"> </class>
+            <class name="Gun05._04_SearchFunctionality"/>
         </classes>
     </test>
 </suite>
